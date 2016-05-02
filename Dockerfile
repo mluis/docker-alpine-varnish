@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM quay.io/wunder/wunder-alpine-base
 MAINTAINER ilari.makela@wunderkraut.com
 
 ADD start.sh /start.sh
@@ -15,6 +15,8 @@ ENV VARNISH_BACKEND_PORT 80
 ENV VARNISH_BACKEND_HOST 192.168.1.1
 ENV VARNISH_PORT 80
 ENV VARNISH_MEMORY 100M
+
+USER app
 
 # Expose port 80
 EXPOSE 80
